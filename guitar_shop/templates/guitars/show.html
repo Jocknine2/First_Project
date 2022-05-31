@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{guitar.model}} </h1>
+<h2> {{guitar.model}} </h2>
 
 <h3>Information</h3>
-<ul>
-    {% for guitar in guitars %}
-    <li>
-        {{guitar.model}}, {{guitar.body}},{{guitar.retail_price}}, {{guitar.details}}
-    </li>
 
-    <button>
-        Buy stock
-    </button>
+<ul>
+    <div>
+        <li>
+        
+            Shape: {{guitar.body}},<br>
+            Build price: {{guitar.build_price}},<br>
+            Retail price: {{guitar.retail_price}},<br>
+            Details: {{guitar.details}}
+            
+        </li>
+    </div>
     <button>
         Sell
     </button>
-
-    {% endfor %}
 </ul>
 
 

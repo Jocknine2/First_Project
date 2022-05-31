@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add a Visit</h1>
+<h1>Add a Product</h1>
 
-<form action="/visits" method="post">
-  <label for="user">Select a user:</label>
-    <select name="user_id" id="user">
-      {% for user in users %}
-      <option value="{{ user.id }}">{{ user.name }}</option>
+<form action="/shop" method="post">
+  <label for="guitar">Select a guitar:</label>
+    <select name="guitar_id" id="guitar">
+      {% for guitar in guitars %}
+      <option value="{{ guitar.id }}">{{ guitar.model }}</option>
       {% endfor %}
     </select>
   
-  <label for="location">Select a location:</label>
-    <select name="location_id" id="location">
-      {% for location in locations %}
-      <option value="{{ location.id }}">{{ location.name }}</option>
+  <label for="manufacturer">Select a manufacturer:</label>
+    <select name="manufacturer_id" id="manufacturer">
+      {% for manufacturer in manufacturers %}
+      <option value="{{ manufacturer.id }}">{{ manufacturer.company }}</option>
       {% endfor %}
-    </select>
-  
+    </select><br>
 
-  <label for="review">Add a Review</label>
-  <textarea name="review" id="review" cols="30" rows="10"></textarea>
-  <input class="btn btn--action" type='submit' value="Visit">
-</form>
+    <label for="build_price">Cost:</label>
+    <input type="number" id="build_price" name="build_price" min="250">
+    <label for="retail_price">Price:</label>
+    <input type="number" id="retail_price" name="retail_price" min="300">
+
+      <input class="btn btn--action" type='submit' value="Add">
+    
+  
 
 {% endblock %}

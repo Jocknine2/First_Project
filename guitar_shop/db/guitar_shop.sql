@@ -24,7 +24,7 @@ CREATE TABLE shop (
     manufacturer_id INTEGER NOT NULL,
     guitar_id INTEGER NOT NULL,
         FOREIGN KEY (guitar_id)
-            REFERENCES guitars(id) ON DELETE CASCADE, 
+            REFERENCES guitars(id) ON DELETE CASCADE,
         FOREIGN KEY (manufacturer_id)
             REFERENCES manufacturers(id) ON DELETE CASCADE
 );

@@ -6,13 +6,17 @@
 <h3>Models:</h3>
 <ul>
     {% for guitar in guitars %}
+    <div>
     <li>
-        {{guitar.model}},<br>
-        {{guitar.body}},<br>
-        {{guitar.build_price}},<br>
-        {{guitar.retail_price}},<br>
-        {{guitar.description}}
+        <h4>{{guitar.model}}</h4>
+
+        Shape: {{guitar.body}} <br>
+        Build price: {{guitar.build_price}} <br>
+        Retail price: {{guitar.retail_price}} <br>
+        Details: {{guitar.details}} 
+    
     </li>
+    </div>
     {% endfor %}
 </ul>
 

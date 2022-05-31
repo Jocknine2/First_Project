@@ -23,7 +23,7 @@ guitar3 = Guitar(
 guitar_repository.save(guitar3)
 
 guitar4 = Guitar(
-    "Telecaster", "tele", 450, 870, "61, 6 string, 22 frets, 2 single coil, "
+    "Telecaster", "Tele", 450, 870, "61, 6 string, 22 frets, 2 single coil, "
 )
 guitar_repository.save(guitar4)
 

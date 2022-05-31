@@ -51,6 +51,7 @@ def guitars(manufacturer):
     for row in results:
         guitar = Guitar(
             row["model"],
+            row["body"],
             row["build_price"],
             row["retail_price"],
             row["details"],

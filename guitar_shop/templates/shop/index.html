@@ -8,11 +8,11 @@
 </p>
 
 <ul>
-  {% for products in shop %}
+  {% for product in products %}
   <li>
-  <p>{{ shop.manufacturer.company }} - {{ shop.guitar.model }} </p>
+  <p>{{ product.manufacturer.company }} - {{ product.guitar.model }} </p>
     <p>
-      <form action="/visits/{{ shop.id }}/delete" method="POST">
+      <form action="/visits/{{ product.id }}/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
     </p>

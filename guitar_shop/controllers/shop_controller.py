@@ -10,8 +10,8 @@ shop_blueprint = Blueprint("/shop", __name__)
 
 @shop_blueprint.route("/shop")
 def shop():
-    shop = shop_repository.select_all()
-    return render_template("/shop/index.html", shop=shop)
+    products = shop_repository.select_all()
+    return render_template("/shop/index.html", products=products)
 
 
 @shop_blueprint.route("/shop/new", methods=["GET"])

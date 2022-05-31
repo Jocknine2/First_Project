@@ -16,7 +16,5 @@ def guitars():
 @guitar_blueprint.route("/guitars/<id>")
 def show(id):
     guitar = guitar_repository.select(id)
-    manufacturers = guitar_repository.manufacturers(guitar)
-    return render_template(
-        "guitars/show.html", guitar=guitar, manufacturers=manufacturers
-    )
+
+    return render_template("guitars/show.html", guitar=guitar)
