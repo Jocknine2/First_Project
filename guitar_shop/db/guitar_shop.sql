@@ -23,6 +23,7 @@ CREATE TABLE shop (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     manufacturer_id INTEGER NOT NULL,
     guitar_id INTEGER NOT NULL,
+    stock INTEGER NOT NULL,
         FOREIGN KEY (guitar_id)
             REFERENCES guitars(id) ON DELETE CASCADE,
         FOREIGN KEY (manufacturer_id)

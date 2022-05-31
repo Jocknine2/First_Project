@@ -6,8 +6,8 @@ import repositories.manufacturer_repository as manufacturer_repository
 
 
 def save(product):
-    sql = "INSERT INTO shop ( guitar_id, manufacturer_id ) VALUES ( ?,? ) RETURNING id"
-    values = [product.manufacturer.id, product.guitar.id]
+    sql = "INSERT INTO shop ( guitar_id, manufacturer_id, stock ) VALUES ( ?,?,? ) RETURNING id"
+    values = [product.manufacturer.id, product.guitar.id, product.stock]
     results = run_sql(sql, values)
     product.id = results[0]["id"]
     return product
@@ -22,7 +22,7 @@ def select_all():
     for row in results:
         manufacturer = manufacturer_repository.select(row["manufacturer_id"])
         guitar = guitar_repository.select(row["guitar_id"])
-        product = Shop(manufacturer, guitar, row["id"])
+        product = Shop(manufacturer, guitar, row["stock"], row["id"])
         products.append(product)
     return products
 

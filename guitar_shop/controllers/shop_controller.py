@@ -27,6 +27,7 @@ def new_product():
 def create_task():
     guitar_id = request.form["guitar_id"]
     manufacturer_id = request.form["manufacturer_id"]
+    stock = request.form["stock"]
     guitar = guitar_repository.select(guitar_id)
     manufacturer = manufacturer_repository.select(manufacturer_id)
     shop = shop(guitar, manufacturer)
