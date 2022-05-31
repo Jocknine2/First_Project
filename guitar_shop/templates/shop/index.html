@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Products</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/shop/new">New product</a>
+</p>
+
+<ul>
+  {% for products in shop %}
+  <li>
+  <p>{{ shop.manufacturer.company }} - {{ shop.guitar.model }} </p>
+    <p>
+      <form action="/visits/{{ shop.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

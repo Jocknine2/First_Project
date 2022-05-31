@@ -5,22 +5,22 @@ DROP TABLE manufacturers;
 DROP TABLE guitars;
 
 CREATE TABLE manufacturers (
-    id INTEGER PRIMARY KEY AUTOINCREMENT
-    name VARCHAR
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    company VARCHAR
 );
 
 CREATE TABLE guitars (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     model VARCHAR,
     body shape VARCHAR,
-    retail price INTEGER,
-    build price INTEGER,
+    build_price INTEGER,
+    retail_price INTEGER,
     details VARCHAR
 
 );
 
 CREATE TABLE shop (
-    id PRIMARY KEY AUTOINCREMENT
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     manufacturer_id INTEGER NOT NULL,
     guitar_id INTEGER NOT NULL,
         FOREIGN KEY (guitar_id)

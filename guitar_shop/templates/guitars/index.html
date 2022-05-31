@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Guitars:</h1>
+
+<table>
+  <tr>
+    <th>Model</th>
+  
+  </tr>
+  {% for guitar in guitars %}
+  <tr>
+    <td><a href="/guitars/{{ guitar.id }}"> {{guitar.model}} </a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

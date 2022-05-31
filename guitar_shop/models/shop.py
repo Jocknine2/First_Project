@@ -1,6 +1,5 @@
 class Shop:
-    def __init__(self, manufacturer, guitar, till, id=None):
-        self.manudacturer = manufacturer
+    def __init__(self, manufacturer, guitar, id=None):
+        self.manufacturer = manufacturer
         self.guitar = guitar
-        self.till = till
         self.id = id

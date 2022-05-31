@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Manufacturers:</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    </tr>
+  {% for manufacturer in manufacturers %}
+  <tr>
+    <td><a href="/manufacturers/{{ manufacturer.id }}"> {{manufacturer.company}}</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

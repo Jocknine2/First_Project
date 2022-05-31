@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{guitar.model}} </h1>
+
+<h3>Information</h3>
+<ul>
+    {% for guitar in guitars %}
+    <li>
+        {{guitar.model}}, {{guitar.body}},{{guitar.retail_price}}, {{guitar.details}}
+    </li>
+
+    <button>
+        Buy stock
+    </button>
+    <button>
+        Sell
+    </button>
+
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
