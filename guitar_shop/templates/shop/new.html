@@ -4,12 +4,8 @@
 <h1>Add a Product</h1>
 
 <form action="/shop" method="post">
-  <label for="guitar">Select a guitar:</label>
-    <select name="guitar_id" id="guitar">
-      {% for guitar in guitars %}
-      <option value="{{ guitar.id }}">{{ guitar.model }}</option>
-      {% endfor %}
-    </select>
+  <label for="model">Model:</label>
+  <input type="text" id="model" name="model">
   
   <label for="manufacturer">Select a manufacturer:</label>
     <select name="manufacturer_id" id="manufacturer">
@@ -22,7 +18,8 @@
     <input type="number" id="build_price" name="build_price" min="250">
     <label for="retail_price">Price:</label>
     <input type="number" id="retail_price" name="retail_price" min="300">
-
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" min="1" max="20">
       <input class="btn btn--action" type='submit' value="Add">
     
   

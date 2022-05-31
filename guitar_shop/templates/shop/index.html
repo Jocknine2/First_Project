@@ -12,12 +12,12 @@
   <li>
   <p>{{ product.manufacturer.company }} - {{ product.guitar.model }}, 
     Price: £{{product.guitar.retail_price}} <br>
-    {{product.stock}}
+    {{product.stock}}<br>
 
-    {% if product.stock =< 3 %}
-    <span> skdasvnadfvaheve </span>
+    {% if product.stock < 3 %}
+    <span>&#x274C;</span>
     {% else %}
-    <span> green tick </span>
+    <span>&#x2705;</span>
 
     {% endif %}
   </p>

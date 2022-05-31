@@ -39,6 +39,12 @@ manufacturer_repository.save(manufacturer2)
 manufacturer3 = Manufacturer("Gibson")
 manufacturer_repository.save(manufacturer3)
 
+manufacturer4 = Manufacturer("PRS")
+manufacturer_repository.save(manufacturer4)
+
+manufacturer5 = Manufacturer("Ibanez")
+manufacturer_repository.save(manufacturer5)
+
 product1 = Shop(guitar1, manufacturer1, 12)
 shop_repository.save(product1)
 
