@@ -12,7 +12,7 @@ CREATE TABLE manufacturers (
 CREATE TABLE guitars (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     model VARCHAR,
-    body shape VARCHAR,
+    body VARCHAR,
     build_price INTEGER,
     retail_price INTEGER,
     details VARCHAR

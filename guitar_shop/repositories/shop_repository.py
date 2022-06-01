@@ -1,14 +1,11 @@
 from db.run_sql import run_sql
-from controllers.manufacturer_controller import manufacturer
-from models.manufacturer import Manufacturer
-from models.guitar import Guitar
 from models.shop import Shop
 import repositories.guitar_repository as guitar_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
 
 def save(product):
-    sql = "INSERT INTO shop ( guitar_id, manufacturer_id, stock ) VALUES ( ?,?,? ) RETURNING id"
+    sql = "INSERT INTO shop ( manufacturer_id, guitar_id, stock ) VALUES ( ?,?,? ) RETURNING id"
     values = [product.manufacturer.id, product.guitar.id, product.stock]
     results = run_sql(sql, values)
     product.id = results[0]["id"]
@@ -55,4 +52,10 @@ def delete_all():
 def delete(id):
     sql = "DELETE FROM shop WHERE id = ?"
     values = [id]
+    run_sql(sql, values)
+
+
+def update(product):
+    sql = "UPDATE shop SET (manufacturer_id, guitar_id, stock) = (?, ?, ?) WHERE id = ?"
+    values = [product.manufacturer.id, product.guitar.id, product.stock]
     run_sql(sql, values)
