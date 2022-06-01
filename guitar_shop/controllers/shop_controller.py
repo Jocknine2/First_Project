@@ -91,6 +91,6 @@ def update_product(id):
 
     guitar = guitar_repository.select(guitar_id)
     manufacturer = manufacturer_repository.select(manufacturer_id)
-    shop = Shop(manufacturer_id, guitar_id, stock, id)
+    shop = Shop(manufacturer, guitar, stock, id)
     shop_repository.update(shop)
     return redirect("/shop")

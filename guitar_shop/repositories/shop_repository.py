@@ -57,5 +57,5 @@ def delete(id):
 
 def update(product):
     sql = "UPDATE shop SET (manufacturer_id, guitar_id, stock) = (?, ?, ?) WHERE id = ?"
-    values = [product.manufacturer.id, product.guitar.id, product.stock]
+    values = [product.manufacturer.id, product.guitar.id, product.stock, product.id]
     run_sql(sql, values)
