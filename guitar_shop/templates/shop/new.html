@@ -2,17 +2,30 @@
 
 {% block content %}
 <h1>Add a Product</h1>
-
-<form action="/shop" method="post">
-  <label for="model">Model:</label>
-  <input type="text" id="model" name="model">
+<form>
   
-  <label for="manufacturer">Select a manufacturer:</label>
+  <label for="manufacturer">Select a Manufacturer:</label>
     <select name="manufacturer_id" id="manufacturer">
       {% for manufacturer in manufacturers %}
       <option value="{{ manufacturer.id }}">{{ manufacturer.company }}</option>
       {% endfor %}
-    </select><br>
+      <option value=""></option><br>
+
+        <label class="new-text" for="manufacturer"> New Manufacturer</label>
+        <input type="text" name="manufacturer" id="manufacturer">
+    </select>
+
+    <div>
+      <label for="guitar">Guitar:</label>
+      <select id="guitar" name="guitar_id">
+        {% for guitar in guitars %}
+          <option value="{{ guitar.id }}"
+            {% if guitar.id == guitar.id %} selected="selected"{% endif %}>
+            {{ guitar.model }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
 
     <label for="build_price">Cost:</label>
     <input type="number" id="build_price" name="build_price" min="250">
@@ -21,7 +34,7 @@
     <label for="stock">Stock:</label>
     <input type="number" id="stock" name="stock" min="1" max="20">
       <input class="btn btn--action" type='submit' value="Add">
-    
+  </form>  
   
 
 {% endblock %}

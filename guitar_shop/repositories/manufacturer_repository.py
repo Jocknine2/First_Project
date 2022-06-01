@@ -59,3 +59,9 @@ def guitars(manufacturer):
         )
         guitars.append(guitar)
     return guitars
+
+
+def update(manufacturer):
+    sql = "UPDATE manufacturers SET (company) = (?) WHERE id = ?"
+    values = [manufacturer.company, manufacturer.id]
+    run_sql(sql, values)

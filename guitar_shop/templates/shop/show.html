@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2> {{product.guitar.model}} </h2>
+<h3> {{product.manufacturer.company}}</h3>
+
+
+<h3>Information</h3>
+
+<ul>
+    <div>
+        <li>
+        
+            Shape: {{product.guitar.body}},<br>
+            Build price: {{product.guitar.build_price}},<br>
+            Retail price: {{product.guitar.retail_price}},<br>
+            Details: {{product.guitar.details}}
+            
+        </li>
+    </div>
+
+</ul>
+
+
+{% endblock %}

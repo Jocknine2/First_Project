@@ -3,13 +3,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: #010641;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: "oswald";
     padding: 0px;
     margin: 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Lucida Console", Monaco, monospace;
+    font-family: "oswald";
     margin: 0px;
     padding: 0px;
 }
@@ -24,6 +24,7 @@ nav {
     padding: 0px;
     margin: 0px;
     padding-right: 25px;
+    display: flex;
 }
 
 nav ul li {
@@ -41,10 +42,6 @@ main {
     padding: 25px;
 }
 
-.flex {
+.navigator{ 
     display: flex;
-}
-
-.flex--row {
-    flex-direction: row;
 }

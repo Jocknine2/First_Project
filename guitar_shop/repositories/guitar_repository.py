@@ -71,3 +71,16 @@ def manufacturers(guitar):
         manufacturers.append(manufacturer)
 
     return manufacturers
+
+
+def update(guitar):
+    sql = "UPDATE guitars SET (model, body, build_price, retail_price, details) = (?, ?, ?, ?, ?) WHERE id = ?"
+    values = [
+        guitar.model,
+        guitar.body,
+        guitar.build_price,
+        guitar.retail_price,
+        guitar.details,
+        guitar.id,
+    ]
+    run_sql(sql, values)

@@ -1,5 +1,7 @@
 from db.run_sql import run_sql
+from controllers.manufacturer_controller import manufacturer
 from models.manufacturer import Manufacturer
+from models.guitar import Guitar
 from models.shop import Shop
 import repositories.guitar_repository as guitar_repository
 import repositories.manufacturer_repository as manufacturer_repository
@@ -25,6 +27,24 @@ def select_all():
         product = Shop(manufacturer, guitar, row["stock"], row["id"])
         products.append(product)
     return products
+
+
+def select(id):
+    product = None
+    sql = "SELECT * FROM shop WHERE id = ?"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        guitar = guitar_repository.select(result["guitar_id"])
+        manufacturer = manufacturer_repository.select(result["manufacturer_id"])
+        product = Shop(
+            manufacturer,
+            guitar,
+            result["stock"],
+            result["id"],
+        )
+    return product
 
 
 def delete_all():

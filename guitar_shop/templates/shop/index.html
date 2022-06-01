@@ -10,20 +10,23 @@
 <ul>
   {% for product in products %}
   <li>
-  <p>{{ product.manufacturer.company }} - {{ product.guitar.model }}, 
+  <p> <a href="/shop/<id>"></p>{{ product.manufacturer.company }} - {{ product.guitar.model }}</a>, 
     Price: £{{product.guitar.retail_price}} <br>
     {{product.stock}}<br>
 
     {% if product.stock < 3 %}
-    <span>&#x274C;</span>
+    <span>&#x274C; Should probably stock up!</span>
     {% else %}
-    <span>&#x2705;</span>
+    <span>&#x2705; We're good!</span>
 
     {% endif %}
   </p>
     <p>
       <form action="/shop/{{ product.id }}/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="Sell" />
+      </form>
+      <form action="/shop/{{product.id}}/edit" method="POST">
+        <input class="btn btn--hanger" type="submit" value="Edit" />
       </form>
     </p>
   </li>
